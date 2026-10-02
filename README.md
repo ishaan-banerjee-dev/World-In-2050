@@ -27,3 +27,5 @@ This project was created for an inter-school competition as a web-based presenta
 ## Author
 
 Created by Ishaan Banerjee.
+
+Project Date: January 2022
