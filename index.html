@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>World in 2050</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Style -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;    
+    scroll-behavior: smooth;
+    font-family: 'Roboto Slab', serif;
+}
+
+/* Body */
+body{
+    background: #0671af;
+    color: #efefee;
+}
+.container{
+    margin: auto;
+    overflow: hidden;
+    padding: 4rem 1rem;
+}
+h3{
+    background-color:#efefee ;
+    color: #333333 ;
+    text-align: center;
+    padding: 2rem;
+    font-size: 2.5rem;
+    letter-spacing: .3rem;
+    text-transform: uppercase;
+}
+p{
+    padding-top: .5rem;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    margin:.625rem;
+    letter-spacing: .125rem;
+    text-align: justify;
+}
+/* Menu */
+nav{
+    position: fixed;
+    background-color: rgb(9, 47, 119);
+    z-index: 3;
+    top: 0;
+    width: 100%;
+    height: 5rem;
+}
+nav img{
+    width: 4.5rem;
+    position: absolute;
+}
+nav ul{
+    float: right;
+    margin-right: 1.25rem;
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    justify-content: flex-start;   
+}
+nav a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #efefef;
+    padding: .3rem;
+}
+nav ul li{
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 800;
+    list-style: none;
+    padding: .5rem;
+    line-height: 4.5rem;
+}
+label #btn,
+label #cancel{
+    color: white;
+    font-size: 1rem;
+    float: right;
+    line-height: 5rem;
+    margin-right: 2.5rem;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+nav i{
+    padding-right: 0.3rem;    
+}
+nav ul li:hover,
+nav i:hover,
+nav a:hover{
+    color: goldenrod;
+    font-size: 1.3rem;
+}
+/* Header */
+.header::after{
+    content: '';
+    height: 50rem;
+    width: 100%;
+    background-size: cover;
+    background-image: url("Homepage.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block;
+}
+.homepage{
+    text-align: center;
+    position: absolute;
+    color:white;
+    top: 20%;
+    left: 50%;
+    width: 37.5rem;
+    height: 31.25rem;
+    margin: -18.75rem;
+    font-weight:bold;
+}
+.homepage h1{
+    font-size: 6.25rem;
+    margin-top: 1rem; 
+    padding-top: 14rem;
+    font-family: 'Roboto', sans-serif;
+}
+.homepage h2{
+    padding-top: 5.5rem;
+    font-weight: bold;
+    font-size: 2.188rem;
+}
+.homepage a{
+    font-size: 5rem;
+    padding-top: 0;
+    color: white;
+    text-decoration: none;
+}
+.homepage a:hover{
+    color: goldenrod;
+    font-size: 5.625rem;
+}
+.homepage h2:hover{
+    font-size: 2.5rem;    
+}
+.homepage .quote{
+    line-height: 1.7;
+    margin-top: 1rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 1.875rem;
+    margin-left: 2.5rem;
+    margin-top: 1.25rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.563rem;
+}
+.quote::before{
+    content: open-quote;
+    font-size: 2rem;   
+}
+.quote::after{
+    content: close-quote;
+    font-size: 2rem;   
+}
+/* Introduction */
+.intro-img{
+    float: right;
+    padding:1.875rem    ;
+    padding-top: 3rem; 
+    padding-left: 3rem;
+    padding-right: 2rem;
+}
+.intro-text{
+    width: 60rem;
+    padding-right: 1rem;
+}
+#intro{
+    margin-bottom: 6rem;
+}
+
+/* Transportation */
+.transport-img1{
+    float: right;
+    padding: 1.875rem;    
+    padding-left: 3rem;
+    padding-right: 2rem;
+    padding-top: 3rem;
+}
+.transport-text{
+    width: 60rem;
+    padding-right: 1rem;    
+}
+#transportation{    
+    margin-bottom: 6rem;
+}
+
+/* Healthcare */
+#healthcare{    
+    margin-bottom: 6rem;
+}
+.healthcare-text{
+    width: 60rem;
+    padding-right: 1rem;      
+}
+.healthcare-img1{
+    float: right;
+    padding: 1.875rem;    
+    padding-top: 7rem;  
+    padding-left: 3rem;
+    padding-right: 2rem;
+}
+
+/* Technology */
+#technology{
+    margin-bottom: 4rem;
+}
+.technology-img1{
+    float: right;
+    padding:.625rem;    
+    width: 25rem;
+    padding-top: 4rem;  
+    padding-left: 3rem;
+    padding-right: 2rem;
+}
+.technology-text{
+    width: 60rem;
+    padding-right: 1rem;      
+}
+/* Disadvantage */
+.disadvantage-img1{
+    float: right;
+    padding:.625rem; 
+    padding-top: 5rem;  
+    padding-left: 3rem;
+    padding-right: 2rem;
+}
+.disadvantage-text{
+    width: 60rem;
+    padding-right: 1rem;     
+}
+#disadvantage{ 
+    margin-bottom: 6rem;
+}
+
+/* Credits */
+#credits a{
+    font-size: 1.875rem;
+    color: white;
+    padding-left: .625rem;
+    text-decoration: none;
+}
+#credits a:hover{
+    color: goldenrod;
+    font-size: 2.188rem;
+    cursor: pointer;
+}
+#credits p{
+    font-weight: bold;
+    font-size: 1.875rem;
+}
+#credits .fa-medal{
+    width: 18.75rem;
+}
+#credits{
+    padding-bottom: 1.25rem;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding-bottom: 2rem;
+}
+.credits-photo{
+    color: white;
+    font-size: 18.75rem;
+    margin-top: 5rem;
+    margin-left: 6.25rem;
+}
+.credits-text{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+#credits ul li{
+    list-style: none;
+}
+#credits{
+    padding-left: .625rem;
+}
+/* Media */
+@media (max-width: 75rem){
+    nav{
+        height: 2.5rem;
+    }
+    nav img{
+        width: 2.5rem;
+    }
+    nav ul li{
+        font-size: 1.2rem;
+        line-height: 2rem;
+        padding: .5rem;
+        transition: all .5s;    
+    }
+}
+@media (max-width: 73rem){    
+    nav{
+        height: 5rem;
+    }
+    nav img{
+        width: 5rem;
+    }
+    label #btn{
+        font-size: 2rem;
+        display: block;
+    }
+    nav ul li a{
+        font-size: .8rem;   
+    }
+    nav ul li{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 3rem;
+        padding: 30px, 0;
+        background-color: #2f69a3;
+        top: 5rem;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }
+    nav ul li:hover,
+    nav i:hover,
+    nav a:hover{
+    color: goldenrod;
+    font-size: 1rem;
+}
+}
+@media (max-width: 49rem){    
+    nav{
+        height: 5rem;
+    }
+    nav img{
+        width: 5rem;
+    }
+    label #btn{
+        font-size: 2rem;
+        display: block;
+    }
+    nav ul li a{
+        font-size: .8rem;   
+    }
+    nav ul li{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 6rem;
+        background-color: #2f69a3;
+        top: 5rem;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }
+}
+
+@media only screen and (max-width: 120rem){
+    .intro-img{
+        padding: 0, 1rem;
+    }
+}
+</style>
+</head>
+<body>   
+    <div class="body">
+    <!-- Navigation -->
+    <nav> 
+        <input type="checkbox" id="check">
+        <label for="check">            
+        <i class="fas fa-bars" id="btn"></i>
+        <i class="fas fa-times" id="cancel"></i>
+        </label>
+        <img src="Logo.png" alt="Logo">
+        <ul>
+        <li>
+            <a href="#">
+                <i class="fas fa-home"></i>
+                Home
+            </a>
+        </li>
+        <li>
+            <a href="#transportation">
+                <i class="fas fa-car-side"></i>
+                Transportation
+            </a>
+        </li>
+        <li>
+            <a href="#healthcare">                       
+                <i class="fas fa-heartbeat"></i>
+                Healthcare  
+            </a>   
+        </li>
+        <li>            
+            <a href="#technology">
+                <i class="fas fa-laptop"></i>
+                Technology
+            </a>
+        </li>  
+        <li>
+            <a href="#disadvantage">
+                <i class="far fa-thumbs-down"></i>
+                Drawbacks
+            </a>
+        </li>
+        <li>
+            <a href="#credits">
+                <i class="fas fa-medal"></i>
+                Credits
+            </a>
+        </li> 
+    </ul>
+</nav>
+<div class="main">
+    <header class="header">
+        <div class="homepage">
+            <h1>The World In 2050</h1>            
+            <p class="quote">The best way to predict the future is to create it.</p>
+            <a href="#intro">
+            <h2>Scroll Down To Read More</h2>            
+            <i class="fas fa-sort-down"></i>    
+            </a>
+        </div>        
+    </header>  
+    <!-- Intro -->
+    <div id="intro">
+        <h3>Introduction</h3>
+        <div class="img-intro">
+            <img src="Intro.jpg" width="350 rem" height="300rem" class="intro-img" alt="intro-img"></img>
+        </div>
+        <div class="intro-text">
+            <p>
+                Our world in 2050 will be very different from what we know it right now. Most of the UN Sustainable Development Goals envisioned in 2015 will be met. The world will be a peaceful place to live with prosperous communities and sustainable habitats. Our energy needs will be met entirely by renewable sources and the world will be Carbon Negative on net emissions. Also, Earth might no longer be our only home, humans will start establishing colonies on Mars and Moon. <br><br>
+                The distinction between the physical and digital world will get blurred. Humans and Machines will be digitally connected. Digital chips implanted in human brains will enable our “Digital Avatar” in the “Metaverse”. Advanced procedures like DNA modification will become very common and humans will have a longer lifespan. Robots will take over many tasks previously performed by humans. They also might end up as our pets. <br><br>
+                I feel very excited, imagining the future. Don’t you? 
+                         
+            </p>
+        </div>        
+    </div>
+    <!-- Transportation -->
+    <div id="transportation">
+    <h3>Transportation</h3>
+    <img src="transport 1.jpg" alt="Flying Car" width="300rem" height="350rem" class="transport-img1">
+    <div class="transport-text">
+    <p>
+        The year 2050 will redefine the way we travel. <br><br>
+        Autonomous navigation will be supported in all vehicles and Traffic jams will be a thing of the past. We are already witnessing early trends wherein companies like Tesla are building underground cities & roads which will significantly reduce the commutation time. Another advancement will be Hydrogen Fuel cell-powered vehicles, where the end by-product will only be water. Flying cars might also become a reality. Nascent technology initiatives of today, like the “Uber Elevate”, will mature and enable a vertical takeoff vehicle.<br><br>
+        As for trains, concepts like Tesla’s Hyperloop might just be the future of trains. Hyperloop will pass through a completely airtight vacuumed tube & will achieve speeds as high as 1000 km per hour. This means you can travel from India to London in just 5 hours compared to the 10 hours taken by traditional airplanes, which is a huge improvement. <br><br>
+        Travel in 2050 will be faster, more convenient and eco-friendlier. I just wish we could see some of these innovations in action today.        
+        </p>
+    </div>
+    </div>    
+    <!-- Healthcare -->
+    <div id="healthcare">
+        <h3>Healthcare</h3>
+        <img src="health.jpg" alt="Medical" width="500rem" class="healthcare-img1">
+        <div class="healthcare-text">
+        <p>
+            By 2050, the field of healthcare will take a huge leap. To keep people healthy, the healthcare team will end impoverishment & improve nutrition in people. They will also ensure availability and sustainable management of water and sanitation for all & promote, sustainable agricultural practices to ensure healthy lives and promote well-being for all ages.  <br><br>
+            The data revolution, we have long been promised in healthcare will be well established. Patients will have full access to their medical records and many will benefit from 'expert systems' that use data from their medical records to support them to lead healthy lifestyles and manage their long-term conditions. 
+            Medical science will have collected DNA sequencing data from tens of millions of patients, shedding light on associations between particular genes and diseases. Stem-cell medicine, which is at its early stages currently, will become an important tool in mainstream medicine. <br><br>
+            The world in 2050 might finally be a place where humans will not need to worry about their health & live life freely.
+            
+        </div>            
+    </p>
+    </div>
+    <!-- Technology -->
+    <div id="technology">
+        <h3>Technology</h3>
+        <img src="technology.jpg" alt="Computer" class="technology-img1">
+        <div class="technology-text">
+        <p>
+            In 2050, people will use technology for a cleaner environment, stronger infrastructure, promote inclusive and sustainable industrialization, and for many more innovations.  Technology will be a great enabler that will help in reducing inequality and discrimination from societies all around the world.  <br><br>
+            Technology will also dominate the workplace. Artificial intelligence and smart assistants will become very common, while the use of virtual reality will continue to increase. Everything will become smart, connected & data-driven. Computers will have huge amounts of processing power. All the manual labour will be done by robots rather than humans. The use of the internet will be nearly as pervasive and necessary as oxygen. Seamless connectivity will be the norm, and it will be impossible to unplug. <br><br> 
+            From amazing advancements to great developments, we can just only imagine a wider array of possibilities for the world in 2050.                       
+    </p>
+</div>
+    </div>
+    <!-- Disadvantages -->
+    <div class="disadvantage" id="disadvantage">
+        <h3>The Drawbacks</h3>
+        <img src="disadvantages.jpg" width="500rem" alt="Broken Computer" class="disadvantage-img1"> 
+        <div class="disadvantage-text">
+        <p>
+            There is a famous American idiom: “There are two sides to every coin”. This is also true for the world of 2050. While it may appear to be picture-perfect, it might just end up creating new lacunae's which may be difficult to fill. <br><br>
+            Humans are also getting too dependent on their gadgets, we are using our brains lesser & lesser each day. So, we might just end up losing our intelligence. Addiction to our devices will also start limiting our social interactions and may lead to behavioural and mental health challenges. The chips implanted in human brain might sound like a great idea at first, but hackers might start to discover vulnerabilities and might tamper them.<br><br>
+            While Genetic Engineering might open up new avenues on the healthcare front, the Ethical implications around human cloning would still need sensible handling. Also, with the replacement of the human workforce with robots, we will soon be looking at hordes of citizens of zero economic value. <br><br>
+            So, maintaining the right balance between development and its social implication is likely to emerge as a herculean challenge for the world in 2050.
+            
+        </p>
+    </div>
+    </div>
+    <!-- Credits -->            
+    <h3>Credits</h3>
+    <div class="line-conatiner">
+        <div class="line"></div>
+    </div>
+    <div id="credits">
+        <div class="credits-text">
+        <div class="images-credits">
+        <p>Images from:</p>
+        <ul>
+        <li>
+            <a target="_blank" href="https://unsplash.com">Unsplash</a>
+        </li>
+        <li>
+            <a target="_blank" href="https://pixabay.com/">Pixabay</a>
+        </li>
+        </ul>
+    </div>
+    <div class="information-credits">    
+        <p>Information From:</p>
+        <ul>
+            <li>
+                <a target="_blank" href="https://youtube.com">Youtube</a>
+            </li>
+            <li>                
+                <a target="_blank" href="https://google.com">Google</a>
+            </li>
+        </ul>
+    </div>
+    <div class="icon-credits">
+        <p>Icons From:</p>
+        <ul>
+        <li>
+            <a target="_blank" href="https://fontawesome.com">Font Awesome</a>
+        </li>    
+        </ul>
+    </div>
+    <div class="font-credits">
+        <p>Fonts From:</p>
+        <ul>
+        <li>
+            <a target="_blank" href="https://fonts.google.com">Google Fonts</a>
+        </li>    
+        </ul>
+    </div>
+</div>
+<div class="credits-photo">
+    <i float="right" class="fas fa-medal"></i>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
